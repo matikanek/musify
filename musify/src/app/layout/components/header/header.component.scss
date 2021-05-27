@@ -1,0 +1,44 @@
+:host {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  background-color: #fdfaff;
+  display: flex;
+  height: 80px;
+  justify-content: space-between;
+  align-items: center;
+  padding-right: 30px;
+  box-shadow: 0 2px 5px 0px rgba(#1c1a1d, 0.2);
+}
+
+.header__left {
+  display: flex;
+  flex-direction: row;
+  height: 100%;
+}
+
+.header__left-nav {
+  display: flex;
+  align-items: center;
+}
+
+.header__left-nav-item {
+  margin-right: 20px;
+  height: 100%;
+
+  &:last-of-type {
+    margin-right: 0;
+  }
+}
+
+.header__left-nav-link {
+  color: #1c1a1d;
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.header__left-logo {
+  padding: 5px 10px;
+}
