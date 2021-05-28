@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { ContentComponent } from './components/content/content.component';
 import { HeaderComponent } from './components/header/header.component';
 import { NzIconModule } from 'ng-zorro-antd/icon';
+import { RouterModule } from '@angular/router';
 
 const components = [
   HeaderComponent,
@@ -18,7 +19,8 @@ const components = [
   ],
   imports: [
     CommonModule,
-    NzIconModule
+    NzIconModule,
+    RouterModule
   ]
 })
 export class LayoutModule { }
