@@ -1,0 +1,34 @@
+// Typography - fonts
+// --------------------------------
+$font-family-primary: "Raleway", sans-serif;
+$font-family-secondary: "Roboto";
+
+// Typography - size
+// --------------------------------
+$sscss-font-size: (
+  "little": (
+    $mobile: 10px,
+    $desktop: 10px,
+  ),
+  "small": (
+    $mobile: 10px,
+    $desktop: 12px,
+  ),
+  "default": (
+    $mobile: 12px,
+    $desktop: 14px,
+  ),
+  "medium": (
+    $mobile: 14px,
+    $desktop: 16px,
+  ),
+  "big": (
+    $mobile: 20px,
+    $desktop: 24px,
+  ),
+);
+
+// Typography - interpolation flag
+// --------------------------------
+
+$sscss-font-interpolation: true;
