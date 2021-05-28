@@ -4,19 +4,19 @@ import { RouterModule, Routes } from '@angular/router';
 const routes: Routes = [
   {
     path: 'home',
-    loadChildren: () => import('./+home/home-routing.module').then(m => m.HomeRoutingModule),
+    loadChildren: () => import('./+home/home.module').then(m => m.HomeModule),
   },
   {
     path: 'browse',
-    loadChildren: () => import('./+browse/browse-routing.module').then(m => m.BrowseRoutingModule),
+    loadChildren: () => import('./+browse/browse.module').then(m => m.BrowseModule),
   },
   {
     path: 'authors',
-    loadChildren: () => import('./+authors/authors-routing.module').then(m => m.AuthorsRoutingModule),
+    loadChildren: () => import('./+authors/authors.module').then(m => m.AuthorsModule),
   },
   {
     path: 'settings',
-    loadChildren: () => import('./+settings/settings-routing.module').then(m => m.SettingsRoutingModule),
+    loadChildren: () => import('./+settings/settings.module').then(m => m.SettingsModule),
   },
   {
     path: '',
