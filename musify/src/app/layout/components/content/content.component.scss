@@ -1,0 +1,8 @@
+@import "styles";
+
+:host {
+  margin-top: $header-height;
+  display: block;
+  padding: 30px;
+  width: 100%;
+}
