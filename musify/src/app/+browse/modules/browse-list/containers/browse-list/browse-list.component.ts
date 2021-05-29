@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Song } from 'src/app/shared/models/song.model';
+import { BrowseQuery } from 'src/app/+browse/store/browse.query';
+import { BrowseService } from 'src/app/+browse/store/browse.service';
 
 @Component({
   selector: 'app-browse-list',
@@ -7,62 +8,15 @@ import { Song } from 'src/app/shared/models/song.model';
   styleUrls: ['./browse-list.component.scss']
 })
 export class BrowseListComponent implements OnInit {
-  songs: Song[] = [
-    {
-      id: 1,
-      title: 'Beautiful journey',
-      author: {
-        name: 'Carl',
-        lastName: 'Adams'
-      },
-      icon: 'icon',
-      views: 256
-    },
-    {
-      id: 2,
-      title: 'Someone loves you honey',
-      author: {
-        name: 'June',
-        lastName: 'Lodge'
-      },
-      icon: 'icon',
-      views: 679
-    },
-    {
-      id: 3,
-      title: 'Time-Inception',
-      author: {
-        name: 'Hans',
-        lastName: 'Zimmer'
-      },
-      icon: 'icon',
-      views: 582
-    },
-    {
-      id: 4,
-      title: 'Redshire',
-      author: {
-        name: 'Andrius',
-        lastName: 'Klimka'
-      },
-      icon: 'icon',
-      views: 398
-    },
-    {
-      id: 5,
-      title: 'Love love love',
-      author: {
-        name: 'Juliana',
-        lastName: 'Lovelas'
-      },
-      icon: 'icon',
-      views: 872
-    },
-  ]
+  songs$ = this.browseQuery.selectAll();
 
-  constructor() { }
+  constructor(
+    private browseService: BrowseService,
+    private browseQuery: BrowseQuery
+  ) { }
 
   ngOnInit(): void {
+    this.browseService.getSongs();
   }
 
 }

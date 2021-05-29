@@ -7,6 +7,7 @@ import { LayoutModule } from './layout/layout.module';
 import { NG_ENTITY_SERVICE_CONFIG } from '@datorama/akita-ng-entity-service';
 import { AkitaNgDevtools } from '@datorama/akita-ngdevtools';
 import { environment } from '../environments/environment';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -16,6 +17,7 @@ import { environment } from '../environments/environment';
     BrowserModule,
     AppRoutingModule,
     LayoutModule,
+    HttpClientModule,
     environment.production ? [] : AkitaNgDevtools.forRoot()
   ],
   providers: [{ provide: NG_ENTITY_SERVICE_CONFIG, useValue: { baseUrl: 'https://jsonplaceholder.typicode.com' }}],

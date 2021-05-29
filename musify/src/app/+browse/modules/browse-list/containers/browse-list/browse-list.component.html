@@ -1,5 +1,5 @@
 <app-browse-list-list
-  *ngIf="songs"
+  *ngIf="songs$ | async as songs"
   [songs]="songs"
 >
 </app-browse-list-list>
