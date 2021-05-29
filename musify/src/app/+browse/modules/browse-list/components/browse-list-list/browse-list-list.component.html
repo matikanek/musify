@@ -1,1 +1,18 @@
-<p>browse-list-list works!</p>
+<div class="browse-list-list__wrapper"> 
+  <app-heading>Browse songs</app-heading>
+  <ul class="browse-list-list__list">
+    <li 
+      class="browse-list-list__item"
+      *ngFor="let song of songs"
+    >
+      <div class="browse-list-list__item-left">
+        <img class="browse-list-list__item-img" src="/assets/album.png" alt="picture" />
+        <div class="browse-list-list__item-data">
+          <p class="browse-list-list__item-data-title">{{ song.title }}</p>
+          <p class="browse-list-list__item-data-author">{{ song.author.name + " " + song.author.lastName }}</p>
+        </div>
+      </div>
+      <p class="browse-list-list__item-data-views">{{ song.views }}</p>
+    </li>
+  </ul>
+</div>
