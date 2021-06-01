@@ -9,10 +9,8 @@ import { BrowseService } from 'src/app/+browse/store/browse.service';
   templateUrl: './browse-list.component.html',
   styleUrls: ['./browse-list.component.scss']
 })
-export class BrowseListComponent implements OnInit, OnDestroy {
-  songs = [];
-  unsubscribeSongs = new Subject();
-  songs$: Observable<any>;
+export class BrowseListComponent implements OnInit {
+  songs$ = this.browseQuery.selectAll();
 
   constructor(
     private browseService: BrowseService,
@@ -20,30 +18,6 @@ export class BrowseListComponent implements OnInit, OnDestroy {
   ) { }
 
   ngOnInit(): void {
-    console.log('I am in');
     this.browseService.getSongs();
-    //this.getSongsUsingSubscribeMethod();
-    this.getSongsUsingAsyncPipe();
-  }
-
-  ngOnDestroy(): void {
-    this.unsubscribeSongs.next();
-    this.unsubscribeSongs.complete();
-    console.log('good bye');
-  }
-
-  getSongsUsingSubscribeMethod(): void {
-    this.browseQuery
-      .selectAll()
-      .pipe(takeUntil(this.unsubscribeSongs))
-      .subscribe((songs) => {
-        this.songs = songs;
-        console.log('subscribe');
-      });
-  }
-
-  getSongsUsingAsyncPipe(): void {
-    this.songs$ = this.browseQuery.selectAll();
-    console.log('subscribe async pipe');
   }
 }
