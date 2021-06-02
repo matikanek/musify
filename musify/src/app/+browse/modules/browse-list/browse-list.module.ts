@@ -3,8 +3,9 @@ import { CommonModule } from '@angular/common';
 import { BrowseListComponent } from './containers/browse-list/browse-list.component';
 import { BrowseListListComponent } from './components/browse-list-list/browse-list-list.component';
 import { TypoghaphyModule } from 'src/app/shared/modules/typoghaphy/typoghaphy.module';
-
-
+import { NzInputModule } from 'ng-zorro-antd/input';
+import { ReactiveFormsModule } from '@angular/forms';
+import { BrowseListFormFactory } from './shared/browse-list-form.factory';
 
 @NgModule({
   declarations: [
@@ -13,7 +14,12 @@ import { TypoghaphyModule } from 'src/app/shared/modules/typoghaphy/typoghaphy.m
   ],
   imports: [
     CommonModule,
-    TypoghaphyModule
+    TypoghaphyModule,
+    NzInputModule,
+    ReactiveFormsModule
+  ],
+  providers: [
+    BrowseListFormFactory
   ]
 })
 export class BrowseListModule { }

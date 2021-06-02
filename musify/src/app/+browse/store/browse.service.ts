@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { Params } from '@angular/router';
 import { BrowseRepository } from './browse.repository';
 import { BrowseStore } from './browse.store';
 
@@ -10,14 +11,14 @@ export class BrowseService {
     private browseStore: BrowseStore
   ) {}
 
-  getSongs(): void {
+  getSongs(queryParams: Params = {}): void {
     this.browseRepository
-      .getSongs()
+      .getSongs(queryParams)
       .subscribe((songs) => { 
         this.browseStore.set(songs);      
       });
   }
-  
+
   getSong(id: number): void {
     this.browseRepository
       .getSong(id)

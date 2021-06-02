@@ -1,5 +1,15 @@
 <div class="browse-list-list__wrapper"> 
   <app-heading>Browse songs</app-heading>
+
+  <form [formGroup]="filtersForm">
+    <nz-input-group [nzSuffix]="suffixIconSearch">
+      <input formControlName="search" type="text" nz-input placeholder="input search text" />
+    </nz-input-group>
+  </form>
+  <ng-template #suffixIconSearch>
+    <i nz-icon nzType="search"></i>
+  </ng-template>
+
   <ul class="browse-list-list__list">
     <li 
       class="browse-list-list__item"
