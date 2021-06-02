@@ -2,4 +2,7 @@
   *ngIf="song$ | async as song"
 >
   {{ song.title }}
+  <div (click)="goBack()">
+    <i nz-icon nzType="left" nzTheme="outline"></i>
+  </div>
 </div>
