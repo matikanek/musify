@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { BrowseComponent } from './containers/browse/browse.component';
 import { BrowseRoutingModule } from './browse-routing.module';
 import { BrowseListModule } from './modules/browse-list/browse-list.module';
+import { BrowseSingleModule } from './modules/browse-single/browse-single.module';
 
 
 
@@ -13,7 +14,8 @@ import { BrowseListModule } from './modules/browse-list/browse-list.module';
   imports: [
     CommonModule,
     BrowseRoutingModule,
-    BrowseListModule
+    BrowseListModule,
+    BrowseSingleModule
   ]
 })
 export class BrowseModule { }

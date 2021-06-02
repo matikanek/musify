@@ -4,6 +4,7 @@
     <li 
       class="browse-list-list__item"
       *ngFor="let song of songs"
+      (click)="onSelect(song.id)"
     >
       <div class="browse-list-list__item-left">
         <img class="browse-list-list__item-img" src="/assets/album.png" alt="picture" />

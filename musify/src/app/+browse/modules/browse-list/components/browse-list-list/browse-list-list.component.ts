@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Song } from 'src/app/shared/models/song.model';
 
 @Component({
@@ -9,9 +10,13 @@ import { Song } from 'src/app/shared/models/song.model';
 export class BrowseListListComponent implements OnInit {
   @Input() songs: Song[] = [];
 
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit(): void {
+  }
+
+  onSelect(songId: number): void {
+    this.router.navigate([`/browse/${songId}`]);
   }
 
 }

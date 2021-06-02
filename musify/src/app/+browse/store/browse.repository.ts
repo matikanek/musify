@@ -13,4 +13,8 @@ export class BrowseRepository {
     return of(songs);
     //return this.http.get<Song[]>('Moje API');
   }
+
+  getSong(id: number): Observable<Song> {
+    return of(songs.find(song => song.id === id) as Song);
+  }
 }

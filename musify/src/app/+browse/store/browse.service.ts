@@ -17,4 +17,12 @@ export class BrowseService {
         this.browseStore.set(songs);      
       });
   }
+  
+  getSong(id: number): void {
+    this.browseRepository
+      .getSong(id)
+      .subscribe((song) => {
+        this.browseStore.update({ song })
+      });
+  }
 }
