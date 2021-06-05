@@ -5,6 +5,24 @@
     <nz-input-group [nzSuffix]="suffixIconSearch">
       <input formControlName="search" type="text" nz-input placeholder="input search text" />
     </nz-input-group>
+    <nz-radio-group formControlName="sortProperty">
+      <label nz-radio [nzValue]="sortProperty.alphabet">Alphabeticaly</label>
+      <label nz-radio [nzValue]="sortProperty.numerative">Numeratively</label>
+    </nz-radio-group>
+    <i 
+      *ngIf="searchOrderControl.value === sortOrder.descending" 
+      nz-icon 
+      nzType="up" 
+      nzTheme="outline"
+      (click)="setOrder(sortOrder.ascending)"
+    ></i>
+    <i 
+      *ngIf="searchOrderControl.value === sortOrder.ascending" 
+      nz-icon 
+      nzType="down" 
+      nzTheme="outline"
+      (click)="setOrder(sortOrder.descending)"
+    ></i>
   </form>
   <ng-template #suffixIconSearch>
     <i nz-icon nzType="search"></i>

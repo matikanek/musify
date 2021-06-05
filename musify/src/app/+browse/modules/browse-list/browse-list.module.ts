@@ -6,6 +6,8 @@ import { TypoghaphyModule } from 'src/app/shared/modules/typoghaphy/typoghaphy.m
 import { NzInputModule } from 'ng-zorro-antd/input';
 import { ReactiveFormsModule } from '@angular/forms';
 import { BrowseListFormFactory } from './shared/browse-list-form.factory';
+import { NzRadioModule } from 'ng-zorro-antd/radio';
+import { NzIconModule } from 'ng-zorro-antd/icon';
 
 @NgModule({
   declarations: [
@@ -16,7 +18,9 @@ import { BrowseListFormFactory } from './shared/browse-list-form.factory';
     CommonModule,
     TypoghaphyModule,
     NzInputModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    NzRadioModule,
+    NzIconModule
   ],
   providers: [
     BrowseListFormFactory
